@@ -1,0 +1,280 @@
+{% extends 'base_admin.html' %}
+{% block title %} WSR {% endblock title %}
+{% load static %}
+{% block content %}
+
+<!-- Inicio HTML -->
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                <!-- Contadores -->
+                <div class="row">
+                    <!-- DI -->
+                    <div class="col-xl-12 col-md-12 mb-1 ml-2">
+                        <a href="#" class="card-link">
+                            <div class="card border-left-info shadow h-100 py-2">
+                                <div class="card-body">
+                                    <div class="row no-gutters align-items-center">
+                                        <div class="col mr-2">
+                                            <div class="text-xxl font-weight-bold text-info text-uppercase mb-1">DI
+                                            </div>
+                                            <div class="row no-gutters align-items-center">
+                                                <div class="col">
+                                                    <div class="progress progress-sm mr-2">
+                                                        <div class="progress-bar bg-info" role="progressbar"
+                                                            style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                                                            aria-valuemax="100"></div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-auto">
+                                            <i class="fas fa-hourglass-half fa-2x text-black-300"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <!-- Fim DI -->
+                </div>
+                <!-- Fim Contadores -->
+
+                <!-- Botões -->
+                <div class="row">
+                    <div class="row justify-content-between ml-0">
+                        <div class="card-text accordion text-Left ml-4" id="accordion_di">
+
+
+                                <!-- Caixa de seleção personalizada -->
+                                <div class="custom-control custom-checkbox my-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                                    <label class="custom-control-label" for="customCheck">
+                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#texto_di">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                            <span class="text">DECISÃO IMEDIATA</span>
+                                        </div>
+                                    </label>
+                                </div>
+                                <!-- Caixa de seleção personalizada -->
+                                <div class="custom-control custom-checkbox my-2">
+                                    <input type="checkbox" class="custom-control-input" id="customCheckI">
+                                    <label class="custom-control-label" for="customCheckI">
+                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#combinado">
+                                            <span class="icon text-white-50">
+                                                <i class="fas fa-check"></i>
+                                            </span>
+                                            <span class="text">COMBINADO????</span>
+                                        </div>
+                                    </label>
+                                </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-6 col-md-5">
+                <!-- Texto oculto -->
+                <div class="row">
+                    <div class="card shadow text-left">
+                        <!-- Card DI -->
+                        <div id="texto_di" class="collapse">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Texto DI</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuI"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Opções:</div>
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Deletar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-body">
+                                <p class="card-text">
+                                    Então Fulano(a), entendi sua necessidade em aprender inglês,
+                                    agora vou te explicar a metodologia e os valores da nossa plataforma,
+                                    mas antes eu preciso firmar um compromisso bem simples contigo,
+                                    um compromisso de objetividade. Se você não gostar da metodologia,
+                                    ou o valor não couber no seu orçamento no momento,
+                                    eu quero te deixar a vontade para me falar não, não gostei,
+                                    ou não posso estar fazendo o curso no momento, mas em contra partida,
+                                    se for o que você está procurando, e é algo que você quer fazer nesse
+                                    momento a gente finaliza sua matrícula agora nessa ligação, combinado?
+                                    <<< ESPERA O LEAD RESPONDER >>>
+                                    Combinado então
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                        <!-- Card DI -->
+                        <div id="combinado" class="collapse">
+                            <!-- Card Header - Dropdown -->
+                            <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                <h6 class="m-0 font-weight-bold text-primary">Combinado!</h6>
+                                <div class="dropdown no-arrow">
+                                    <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuII"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                    </a>
+                                    <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                        aria-labelledby="dropdownMenuLink">
+                                        <div class="dropdown-header">Opções:</div>
+                                        <a class="dropdown-item" href="#">Editar</a>
+                                        <a class="dropdown-item" href="#">Deletar</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card card-body">
+                                <p class="card-text">
+                                    A DI deve ser clara e o lead responder COMBINADO!
+                                </p>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Botões inferiores -->
+    <div class="position-fixed fixed-bottom text-center mb-5">
+    <!-- Botão "Desligou" -->
+        <div class="col-xl-2 col-md-2 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:gps' %}" class="card-link">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Desligou</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-phone-slash fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- DI -->
+        <div class="col-xl-3 col-md-3 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:speech' %}" class="card-link">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xxl font-weight-bold text-primary text-uppercase mb-1">SPEECH</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-arrow-right fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+    </div>
+    <!-- Final botões inferiores -->
+
+
+        <!-- Final html -->
+</body>
+
+<!-- Adicione este script modificado -->
+<script>
+  // Variáveis
+  const durations = [60, 0]; // Durações em segundos para cada barra de progresso
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const cards = document.querySelectorAll('.card-link');
+
+  let cardIndex = 0;
+  let elapsedSeconds = 0;
+  let interval;
+
+  // Função para atualizar a barra de progresso
+  function updateProgressBar() {
+    elapsedSeconds++;
+    const progressPercentage = (elapsedSeconds / durations[cardIndex]) * 100;
+    progressBars[cardIndex].style.width = progressPercentage + '%';
+    if (elapsedSeconds >= durations[cardIndex]) {
+      clearInterval(interval);
+      cardIndex++; // Avance para o próximo card
+      if (cardIndex < cards.length) {
+        startCountdown(); // Inicie o contador para o próximo card
+        // Mostra a div oculta do card atual e oculta as outras
+        cardTexts.forEach((text, index) => {
+          if (index === cardIndex) {
+            text.style.display = 'block';
+          } else {
+            text.style.display = 'none';
+          }
+        });
+      }
+    }
+  }
+
+
+
+  // Função para iniciar o contador
+  function startCountdown() {
+    elapsedSeconds = 0;
+    progressBars[cardIndex].style.width = '0%';
+    interval = setInterval(updateProgressBar, 1000);
+  }
+
+
+  // Adicionar um evento de clique para cada card
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      if (cardIndex === index) {
+        // Se o card clicado for o mesmo em andamento
+        clearInterval(interval); // Limpa o intervalo atual
+        elapsedSeconds = durations[cardIndex]; // Define o tempo decorrido como a duração para preencher a barra
+        updateProgressBar(); // Atualiza a barra de progresso
+      }
+    });
+  });
+
+
+
+  // Iniciar o contador quando a página carregar (inicie com o primeiro card)
+  startCountdown();
+
+
+
+    // Recolher os botões não clicados
+      document.querySelectorAll('.btn[data-toggle="collapse"]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const target = document.querySelector(btn.getAttribute('data-target'));
+            const allCollapses = document.querySelectorAll('.collapse');
+            allCollapses.forEach(function (collapse) {
+                if (collapse !== target) {
+                    $(collapse).collapse('hide');
+                }
+            });
+        });
+    });
+
+
+</script>
+
+
+
+<!-- Fim HTML -->
+
+{% endblock content %}
