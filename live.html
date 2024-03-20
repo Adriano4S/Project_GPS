@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> WSR </title>
+    <!-- Custom fonts for this template-->
+    <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+        rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link href="css/sb-admin-2.min.css" rel="stylesheet">
+    <!-- Bloco-->
+</head>
+
+<body id="page-top">
+
+    <!-- Page Wrapper -->
+    <div id="wrapper">
+
+        <!-- Sidebar -->
+        <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark toggled" id="accordionSidebar">
+
+            <!-- Sidebar - Brand -->
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
+                <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-fw fa-bolt"></i>
+                </div>
+                <div class="sidebar-brand-text mx-3">WSR A4S <sup>1.0</sup></div>
+            </a>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider my-0">
+
+            <!-- Nav Item - Dashboard -->
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">
+                    <i class="fas fa-fw fa-tachometer-alt"></i>
+                    <span>Dashboard</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Leads
+            </div>
+
+
+            <!-- Botão Ligar -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-headset"></i>
+                    <span>GPS</span></a>
+            </li>
+
+            <!-- Botão Leads -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-users"></i>
+                    <span>Leads</span></a>
+            </li>
+
+            <!-- Botão add Leads -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-user-plus"></i>
+                    <span>Add lead</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider">
+
+            <!-- Heading -->
+            <div class="sidebar-heading">
+                Outros
+            </div>
+
+
+            <!-- Técnica -->
+                <li class="nav-item">
+                <a class="nav-link" href="#">
+                <i class="fas fa-fw fa-table"></i>
+                <span>Técnicas</span></a>
+            </li>
+
+            <!-- Outro botão -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-chart-area"></i>
+                    <span>Outro botão</span></a>
+            </li>
+
+            <!-- Outro botão -->
+            <li class="nav-item">
+                <a class="nav-link" href="#">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Outro botão</span></a>
+            </li>
+
+            <!-- Divider -->
+            <hr class="sidebar-divider d-none d-md-block">
+
+            <!-- Sidebar Toggler (Sidebar) -->
+            <div class="text-center d-none d-md-inline">
+                <button class="rounded-circle border-0" id="sidebarToggle"></button>
+            </div>
+
+            <!-- Sidebar Message -->
+
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+
+            <!-- Main Content -->
+            <div id="content">
+
+                <!-- Topbar -->
+                <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+                    <!-- Sidebar Toggle (Topbar) -->
+                    <button id="sidebarToggleTop" class="btn btn-link d-md-none rounded-circle mr-3">
+                        <i class="fa fa-bars"></i>
+                    </button>
+
+                    <!-- Barra de pesquisa -->
+                    <form
+                        class="d-none d-sm-inline-block form-inline mr-auto ml-md-3 my-2 my-md-0 mw-100 navbar-search">
+                        <div class="input-group">
+                            <input type="text" class="form-control bg-light border-0 small" placeholder="Pesquisar lead... DESATIVADO"
+                                aria-label="Search" aria-describedby="basic-addon2">
+                            <div class="input-group-append">
+                                <button class="btn btn-primary" type="button">
+                                    <i class="fas fa-search fa-sm"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- Fim Barra de pesquisa -->
+
+                    <!-- Barra superior -->
+                    <ul class="navbar-nav ml-auto">
+
+                        <!-- Lembretes - desativado por enquanto -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-bell fa-fw"></i>
+                                <!-- Counter - Alerts -->
+                                <span class="badge badge-danger badge-counter">3+</span>
+                            </a>
+                            <!-- Dropdown - Alerts -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="alertsDropdown">
+                                <h6 class="dropdown-header">
+                                    Lembretes
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-primary">
+                                            <i class="fas fa-file-alt text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">03/09/2023</div>
+                                        <span class="font-weight-bold">Retorno para João as 14:20!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-success">
+                                            <i class="fas fa-donate text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">03/09/2023</div>
+                                        <span class="font-weight-bold">Retorno para Jose as 09:20!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="mr-3">
+                                        <div class="icon-circle bg-warning">
+                                            <i class="fas fa-exclamation-triangle text-white"></i>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div class="small text-gray-500">03/09/2023</div>
+                                        <span class="font-weight-bold">Retorno para Maria as 17:00!</span>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">DESATIVADO</a>
+                            </div>
+                        </li>
+
+                        <!-- Fim Lembretes - desativado por enquanto -->
+
+                        <!-- Mensagens - desativado por enquanto -->
+                        <li class="nav-item dropdown no-arrow mx-1">
+                            <a class="nav-link dropdown-toggle" href="#" id="messagesDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <i class="fas fa-envelope fa-fw"></i>
+                                <!-- Counter - Messages -->
+                                <span class="badge badge-danger badge-counter">4</span>
+                            </a>
+                            <!-- Dropdown - Messages -->
+                            <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="messagesDropdown">
+                                <h6 class="dropdown-header">
+                                    Mensagens - desativado por enquanto
+                                </h6>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_1.svg" alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div class="font-weight-bold">
+                                        <div class="text-truncate">Oi!!</div>
+                                        <div class="small text-black-500">Fulana! · 58m</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_3.svg"
+                                            alt="...">
+                                        <div class="status-indicator"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">P-L-A-N-I-L-H-A-!-!-!</div>
+                                        <div class="small text-black-500">Kelly Gandra · 1d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="img/undraw_profile_2.svg"
+                                            alt="...">
+                                        <div class="status-indicator bg-warning"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Nexus tá péssima hoje</div>
+                                        <div class="small text-black-500">Fulano · 2d</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item d-flex align-items-center" href="#">
+                                    <div class="dropdown-list-image mr-3">
+                                        <img class="rounded-circle" src="https://source.unsplash.com/Mv9hjnEUHR4/60x60"
+                                            alt="...">
+                                        <div class="status-indicator bg-success"></div>
+                                    </div>
+                                    <div>
+                                        <div class="text-truncate">Tô com fome!!</div>
+                                        <div class="small text-black-500">Dog feioso · 2w</div>
+                                    </div>
+                                </a>
+                                <a class="dropdown-item text-center small text-gray-500" href="#">DESATIVADO</a>
+                            </div>
+                        </li>
+
+                        <!-- Fim Mensagens - desativado por enquanto -->
+
+
+                        <!-- Informações de usuario -->
+                        <div class="topbar-divider d-none d-sm-block"></div>
+                        <li class="nav-item dropdown no-arrow">
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small">Inside Salles</span>
+                                <img class="rounded-circle" src="img/undraw_profile.svg"
+                                     alt="Perfil do Usuário" style="max-width: 50px; max-height: 50px;">
+
+                            </a>
+                            <!-- Menu suspenso usuario-->
+                            <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                                aria-labelledby="userDropdown">
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Perfil
+                                </a>
+                                <a class="dropdown-item" href="#">
+                                    <i class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Configurações
+                                </a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" href="#" data-toggle="modal" data-target="#logoutModal">
+                                    <i class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
+                                    Sair
+                                </a>
+                            </div>
+                        </li>
+
+
+                        <!-- Fim informações de usuario -->
+
+
+                    </ul>
+
+                </nav>
+                <!-- End of Topbar -->
+
+                <!-- Begin Page Content -->
+                <div class="container-fluid">
+                    
+                    <!-- conteudo da pagina -->
+                    
+                            <div class="row">
+                                <div class="col-xl-6 col-md-6">
+                                        <!-- Contadores -->
+                                        <div class="row">
+                                            <!-- SPEECH -->
+                                            <div class="col-xl-12 col-md-12">
+                                                <a href="#" class="card-link">
+                                                    <div class="card border-left-info shadow h-100 py-2">
+                                                        <div class="card-body">
+                                                            <div class="row no-gutters align-items-center">
+                                                                <div class="col mr-2">
+                                                                    <div class="text-xxl font-weight-bold text-info text-uppercase mb-1">LIVE
+                                                                    </div>
+                                                                    <div class="row no-gutters align-items-center">
+                                                                        <div class="col">
+                                                                            <div class="progress progress-sm mr-2">
+                                                                                <div class="progress-bar bg-info" role="progressbar"
+                                                                                    style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                                                                                    aria-valuemax="100"></div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="col-auto">
+                                                                    <i class="fas fa-hourglass-half fa-2x text-black-300"></i>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </div>
+                                        </div>
+                    
+                                        <!-- Botões -->
+                                        <div class="row justify-content-between">
+                                            <!-- Botões Abordagem -->
+                                            <div class="card-text accordion text-Left mt-2 ml-2" id="accordion_apresentacao">
+                    
+                                                <!-- Caixa de seleção personalizada -->
+                                                <div class="custom-control custom-checkbox my-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheck">
+                                                    <label class="custom-control-label" for="customCheck">
+                                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_I">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Chamada Live</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <!-- Caixa de seleção personalizada -->
+                                                <div class="custom-control custom-checkbox my-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheckI">
+                                                    <label class="custom-control-label" for="customCheckI">
+                                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_II">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Apresentação Live</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <!-- Caixa de seleção personalizada -->
+                                                <div class="custom-control custom-checkbox my-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheckII">
+                                                    <label class="custom-control-label" for="customCheckII">
+                                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_III">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Material didático</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <!-- Caixa de seleção personalizada -->
+                                                <div class="custom-control custom-checkbox my-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheckIII">
+                                                    <label class="custom-control-label" for="customCheckIII">
+                                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_IV">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Opções de aula</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                                                <!-- Caixa de seleção personalizada -->
+                                                <div class="custom-control custom-checkbox my-2">
+                                                    <input type="checkbox" class="custom-control-input" id="customCheckIV">
+                                                    <label class="custom-control-label" for="customCheckIV">
+                                                        <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_V">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Preços</span>
+                                                        </div>
+                                                    </label>
+                                                </div>
+                    
+                                            </div>
+                                            <!-- Fim Botões Abordagem -->
+                                        </div>
+                                </div>
+                    
+                                <div class="col-xl-6 col-md-6">
+                                        <!-- Textos ocultos -->
+                                        <div class="row">
+                                            <!-- textos Abordagem -->
+                                            <div class="row col-xl-12 col-md-12 mt-2 mr-auto">
+                                                <div class="card shadow text-left">
+                    
+                                                    <!-- Card I -->
+                                                    <div id="botão_I" class="collapse">
+                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Oferta Live</h6>
+                                                            <div class="dropdown no-arrow">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuI"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                                    aria-labelledby="dropdownMenuLink">
+                                                                    <div class="dropdown-header">Opções:</div>
+                                                                    <a class="dropdown-item" href="#">Editar</a>
+                                                                    <a class="dropdown-item" href="#">Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card card-body">
+                                                            <p class="card-text">
+                                                                Não sai dessa tela ainda que quero falar mais um assunto com você.
+                                                                Em primeiro lugar parabéns, você já é um aluno da Wise Up, a plataforma digital
+                                                                já está 100% liberada para começar a estudar.
+                                                                O tema que vou falar com você agora é uma versão PREMIUM do Wise Up online,
+                                                                para quem é essa versão, para aquela pessoa que quer uma aula personalizada
+                                                                como se fosse um personal trainer, para quem quer socializar mais , pois nessa versão,
+                                                                aleém de acesso aos professores, você terá acesso a colegas do mundo inteiro.
+                                                                Isso te interessa?
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                    
+                    
+                                                    <!-- Card II -->
+                                                    <div id="botão_II" class="collapse">
+                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Personal trainer</h6>
+                                                            <div class="dropdown no-arrow">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuII"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                                    aria-labelledby="dropdownMenuLink">
+                                                                    <div class="dropdown-header">Opções:</div>
+                                                                    <a class="dropdown-item" href="#">Editar</a>
+                                                                    <a class="dropdown-item" href="#">Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card card-body">
+                                                            <p class="card-text">
+                                                                Nosso produto foi desenvolvido com objetivo de melhorar a sua performance na língua inglesa,
+                                                                entendemos que cada pessoa tem um perfil muito especifico de aprendizado, e que para melhorar
+                                                                tanto a conversação quanto o desempenho individual, precisam de um direcionamento.
+                                                                A Wise Up Live, é uma plataforma de aulas ao vivo, com uma metodologia voltada para conversação
+                                                                do dia a dia.
+                                                                Sua formação vai do básico ao avançado em até 24 meses, contando com testes a cada 4 meses para
+                                                                mudança de nível e analisando seu desenvolvimento.
+                                                                Cada turma terá 11 alunos no máximo, para que você possa ter acesso a pessoas, culturas e realidades
+                                                                diferentes, e assim aprenda a se comunicar em qualquer situação.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                    
+                                                    <!-- Card III -->
+                                                    <div id="botão_III" class="collapse">
+                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Material</h6>
+                                                            <div class="dropdown no-arrow">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIII"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                                    aria-labelledby="dropdownMenuLink">
+                                                                    <div class="dropdown-header">Opções:</div>
+                                                                    <a class="dropdown-item" href="#">Editar</a>
+                                                                    <a class="dropdown-item" href="#">Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card card-body">
+                                                            <p class="card-text">
+                                                                Sua base de estudo para essas aulas, será os conteúdos da Wise Up online, com uma diferença,
+                                                                hoje você acessa os conteúdos conforme a sua vontade, no Live, você vai concluir as tarefas
+                                                                com um cronograma de ensino dado pelo seu professor, porque as suas aulas da semana, serão
+                                                                com base no conteúdo estudo, é importantíssimo que prepare a aula, para não se sentir perdido.
+                                                                As aulas acontecem 2x por semana, cada aula de 50 min, serão feitas pelo zoom, que você terá
+                                                                acesso na sua plataforma. Você tem direito de assistir as aulas em outras turmas de diferentes
+                                                                horários se precisar e ainda sim as aulas ficarão gravadas para que possa revisitar os conteúdos.
+                                                                Antes de ingressar, você faz um teste de nivelamento, para ver qual melhor turma se enquadra com seu
+                                                                nível para poder estar sempre evoluindo.
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                    
+                    
+                                                    <!-- Card IV -->
+                                                    <div id="botão_IV" class="collapse">
+                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Aulas</h6>
+                                                            <div class="dropdown no-arrow">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIV"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                                    aria-labelledby="dropdownMenuLink">
+                                                                    <div class="dropdown-header">Opções:</div>
+                                                                    <a class="dropdown-item" href="#">Editar</a>
+                                                                    <a class="dropdown-item" href="#">Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card card-body">
+                                                                <p>Opções de Aula 1 (Duas vezes na semana com 50 minutos de aula).</p>
+                    
+                                                                <p>Segunda e Quarta feira das 7h da manhã as 23h</p>
+                    
+                                                                <p>Terça e Quinta feira das 7h da manhã as 23h</p>
+                    
+                                                                <p>Opções de Aula 2 (Uma vez na semana com 1:40h minutos de aula).</p>
+                    
+                                                                <p>Sexta feira das 7h da manhã as 22h</p>
+                    
+                                                                <p>Sábado das 9h da manhã as 16h</p>
+                    
+                                                        </div>
+                                                    </div>
+                    
+                    
+                                                    <!-- Card V -->
+                                                    <div id="botão_V" class="collapse">
+                                                        <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                                            <h6 class="m-0 font-weight-bold text-primary">Preços</h6>
+                                                            <div class="dropdown no-arrow">
+                                                                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuV"
+                                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                                    <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                                                </a>
+                                                                <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                                    aria-labelledby="dropdownMenuLink">
+                                                                    <div class="dropdown-header">Opções:</div>
+                                                                    <a class="dropdown-item" href="#">Editar</a>
+                                                                    <a class="dropdown-item" href="#">Deletar</a>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="card card-body">
+                                                                Individual
+                                                                <p>Wise Up Online 12 x de R$ 156,00</p>
+                                                                <p>R$250,00 (Matricula Live) </p>
+                                                                <p>Mensalidade da aula ao vivo 24 x R$198,00 (Live)</p>
+                                                                <p>Multiperfil (duas pessoas)</p>
+                                                                <p>Wise Up Online 12 x de R$ 186,00</p>
+                                                                <p>Matrícula $310,00</p>
+                                                                <p>Mensalidade 24 x $258,00</p>
+                                                        </div>
+                                                    </div>
+                    
+                    
+                    
+                    
+                                                </div>
+                                            </div>
+                                            <!-- Fim textos Abordagem -->
+                                        </div>
+                                </div>
+                            </div>
+                        </div>
+                    
+                    
+                        <!-- Botões inferiores -->
+                        <div class="position-fixed fixed-bottom text-center mb-2">
+                        <!-- Botão "Desligou" -->
+                            <div class="col-xl-2 col-md-2 mb-5 d-inline-block">
+                              <a href="gps.html" class="card-link">
+                                <div class="card border-left-danger shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Desligou</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-phone-slash fa-2x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                            </div>
+                    
+                            <!-- DI -->
+                            <div class="col-xl-3 col-md-6 mb-5 d-inline-block">
+                              <a href="referidos.html" class="card-link">
+                                <div class="card border-left-primary shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xxl font-weight-bold text-primary text-uppercase mb-1">Referidos</div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-arrow-right fa-2x"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                              </a>
+                            </div>
+                    
+                    
+                    
+                    
+                    
+                    <!-- fim conteudo da pagina -->
+                    
+                </div>
+
+                <!-- /.container-fluid -->
+
+            </div>
+            <!-- End of Main Content -->
+
+            <!-- Footer -->
+            <footer class="sticky-footer bg-white">
+                <div class="container my-auto">
+                    <div class="copyright text-center my-auto">
+                        <span>Copyright &copy; A4S 2023</span>
+                    </div>
+                </div>
+            </footer>
+            <!-- End of Footer -->
+
+        </div>
+        <!-- End of Content Wrapper -->
+
+    </div>
+    <!-- End of Page Wrapper -->
+
+    <!-- Scroll to Top Button-->
+    <a class="scroll-to-top rounded" href="#page-top">
+        <i class="fas fa-angle-up"></i>
+    </a>
+
+    <!-- Logout Modal-->
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Tem certeza?</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">Seleciona "Sair" para finalizar a sessão.</div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    <a class="btn btn-primary" href="#">Logout</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin-2.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="js/demo/chart-area-demo.js"></script>
+    <script src="js/demo/chart-pie-demo.js"></script>
+
+
+<!-- Script JS -->
+<script>
+  // Variáveis
+  const durations = [60, 0]; // Durações em segundos para cada barra de progresso
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const cards = document.querySelectorAll('.card-link');
+
+  let cardIndex = 0;
+  let elapsedSeconds = 0;
+  let interval;
+
+  // Função para atualizar a barra de progresso
+  function updateProgressBar() {
+    elapsedSeconds++;
+    const progressPercentage = (elapsedSeconds / durations[cardIndex]) * 100;
+    progressBars[cardIndex].style.width = progressPercentage + '%';
+    if (elapsedSeconds >= durations[cardIndex]) {
+      clearInterval(interval);
+      cardIndex++; // Avance para o próximo card
+      if (cardIndex < cards.length) {
+        startCountdown(); // Inicie o contador para o próximo card
+        // Mostra a div oculta do card atual e oculta as outras
+        cardTexts.forEach((text, index) => {
+          if (index === cardIndex) {
+            text.style.display = 'block';
+          } else {
+            text.style.display = 'none';
+          }
+        });
+      }
+    }
+  }
+
+
+
+  // Função para iniciar o contador
+  function startCountdown() {
+    elapsedSeconds = 0;
+    progressBars[cardIndex].style.width = '0%';
+    interval = setInterval(updateProgressBar, 1000);
+  }
+
+
+  // Adicionar um evento de clique para cada card
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      if (cardIndex === index) {
+        // Se o card clicado for o mesmo em andamento
+        clearInterval(interval); // Limpa o intervalo atual
+        elapsedSeconds = durations[cardIndex]; // Define o tempo decorrido como a duração para preencher a barra
+        updateProgressBar(); // Atualiza a barra de progresso
+      }
+    });
+  });
+
+
+
+  // Iniciar o contador quando a página carregar (inicie com o primeiro card)
+  startCountdown();
+
+
+
+    // Recolher os botões não clicados
+      document.querySelectorAll('.btn[data-toggle="collapse"]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const target = document.querySelector(btn.getAttribute('data-target'));
+            const allCollapses = document.querySelectorAll('.collapse');
+            allCollapses.forEach(function (collapse) {
+                if (collapse !== target) {
+                    $(collapse).collapse('hide');
+                }
+            });
+        });
+    });
+
+
+</script>
+
+</body>
+
+
+</html>

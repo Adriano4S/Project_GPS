@@ -1,0 +1,635 @@
+{% extends 'base_admin.html' %}
+{% block title %} WSR {% endblock title %}
+{% load static %}
+{% block content %}
+
+<!-- Inicio HTML -->
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                                    <!-- Contadores -->
+                                    <div class="row">
+                                        <!-- SPEECH -->
+                                        <div class="col-xl-12 col-md-12">
+                                            <a href="#" class="card-link">
+                                                <div class="card border-left-info shadow h-100 py-2">
+                                                    <div class="card-body">
+                                                        <div class="row no-gutters align-items-center">
+                                                            <div class="col mr-2">
+                                                                <div class="text-xxl font-weight-bold text-info text-uppercase mb-1">FECHAMENTO
+                                                                </div>
+                                                                <div class="row no-gutters align-items-center">
+                                                                    <div class="col">
+                                                                        <div class="progress progress-sm mr-2">
+                                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                                                                                aria-valuemax="100"></div>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-auto">
+                                                                <i class="fas fa-handshake fa-2x text-black-300"></i>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    </div>
+
+                            <!-- Botões -->
+                            <div class="row justify-content-between">
+                                <!-- Botões Fechamento -->
+                                <div class="col-xl-6">
+                                    <div class="card-text accordion text-Left mt-2 ml-2" id="accordion_apresentacao">
+
+                                        <!-- Caixa de seleção personalizada -->
+                                        <div class="custom-control custom-checkbox my-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheck">
+                                            <label class="custom-control-label" for="customCheck">
+                                                <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_I">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Comparativo de preços</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <!-- Caixa de seleção personalizada -->
+                                        <div class="custom-control custom-checkbox my-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckI">
+                                            <label class="custom-control-label" for="customCheckI">
+                                                <div class="btn btn-success btn-icon-split " data-toggle="collapse" data-target="#botão_II">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Lembrar DI</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <!-- Caixa de seleção personalizada -->
+                                        <div class="custom-control custom-checkbox my-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckII">
+                                            <label class="custom-control-label" for="customCheckII">
+                                                <div class="btn btn-success btn-icon-split " data-toggle="collapse" data-target="#botão_IV">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Formas de pagamento</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+                                        <!-- Caixa de seleção personalizada -->
+                                        <div class="custom-control custom-checkbox my-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckIII">
+                                            <label class="custom-control-label" for="customCheckIII">
+                                                <div class="btn btn-success btn-icon-split " data-toggle="collapse" data-target="#botão_V">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Multiperfil</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+
+
+                                        <!-- Caixa de seleção personalizada para o botão "Objeções" -->
+                                        <div class="custom-control custom-checkbox my-2">
+                                            <input type="checkbox" class="custom-control-input" id="customCheckIV" onchange="mostrarDiv()">
+                                            <label class="custom-control-label" for="customCheckIV">
+                                                <div class="btn btn-success btn-icon-split">
+                                                    <span class="icon text-white-50">
+                                                        <i class="fas fa-check"></i>
+                                                    </span>
+                                                    <span class="text">Objeções</span>
+                                                </div>
+                                            </label>
+                                        </div>
+
+
+
+                                    </div>
+                                </div>
+
+                                            <!-- Botões Objeções -->
+                                            <div class="col-xl-6 ">
+                                                <div class="card-text accordion mt-2 ml-2 text-right">
+                                                    <div id="botoes_objecoes" style="display: none;">
+
+
+                                                        <!-- Botão I (Objeções) -->
+                                                        <div class="my-2"></div>
+                                                        <a href="#" class="btn btn-warning btn-icon-split " data-toggle="collapse" data-target="#botão_Objeções_I">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Financeira</span>
+                                                        </a>
+
+                                                        <!-- Botão II (Objeções) -->
+                                                        <div class="my-2"></div>
+                                                        <a href="#" class="btn btn-warning btn-icon-split " data-toggle="collapse" data-target="#botão_Objeções_II">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Tempo</span>
+                                                        </a>
+
+                                                        <!-- Botão III (Objeções) -->
+                                                        <div class="my-2"></div>
+                                                        <a href="#" class="btn btn-warning btn-icon-split" data-toggle="collapse" data-target="#botão_Objeções_III">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Cartão</span>
+                                                        </a>
+
+                                                        <!-- Botão IV (Objeções) -->
+                                                        <div class="my-2"></div>
+                                                        <a href="#" class="btn btn-warning btn-icon-split" data-toggle="collapse" data-target="#botão_Objeções_IV">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Cancelamento</span>
+                                                        </a>
+
+                                                        <!-- Botão V (Objeções) -->
+                                                        <div class="my-2"></div>
+                                                        <a href="#" class="btn btn-warning btn-icon-split" data-toggle="collapse" data-target="#botão_Objeções_V">
+                                                            <span class="icon text-white-50">
+                                                                <i class="fas fa-check"></i>
+                                                            </span>
+                                                            <span class="text">Pensar</span>
+                                                        </a>
+
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                            </div>
+            </div>
+
+            <div class="col-xl-6 col-md-6">
+                    <!-- Textos ocultos -->
+                    <div class="row">
+                        <!-- textos Abordagem -->
+                        <div class="row col-xl-12 col-md-12 mt-2 mr-auto">
+                            <div class="card shadow text-left">
+
+                                <!-- Card I -->
+                                <div id="botão_I" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Preços</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuI"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Hoje fulano, se você procurar uma escola de inglês de forma convencional, você pagará,
+                                            matricula, material didático e mensalidade, o que vai te exigir um investimento de em média
+                                            400,00 por mês.
+                                            A nossa oportunidade, é um inglês inovador, com um método por assinatura, onde você não paga matricula,
+                                            e o seu material é de forma digital já incluso no seu plano, e o seu investimento seria de 12x de 156,00,
+                                            ou seja apenas 156,00 por mês você já começa mudar seu futuro agora.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card II -->
+                                <div id="botão_II" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">DI</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Lembrar o lead que ele fez um combinado de objetividade.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Card III -->
+                                <div id="botão_III" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Pagamento</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            c
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_IV" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">botão_IV</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIV"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                        <p>Cartão de crédito</p>
+                                        <p>Pix</p>
+                                        <p>Boleto</p>
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_V" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">botão_IV</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuV"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Essa tela é uma tela de oportunidade, caso você queira pode incluir mais uma perfil adicional,
+                                            pagando 30,00 a mais. Esse perfil adicional, vai estudar individualmente, sem misturar com seu perfil.
+                                            Tem alguém que você queira presentear?
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                                <!-- Card IV -->
+                                <div id="botão_Objeções_I" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Financeira</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuVI"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Entendi fulano, mas não veja isso como uma dívida, dívidas você faz
+                                            com comida, roupa, calçado, lazer, que são coisas que você gasta e não tem retorno, o
+                                            curso é um INVESTIMENTO, em você, na sua carreira, na sua vida, já pensou pode ganhar
+                                            50% mais no seu trabalho por falar inglês?
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_Objeções_II" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Tempo</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuVII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Entendi fulano, hoje você sabe a real necessidade do inglês certo?
+                                            Tanto que até procurou pelo curso, o tempo que você gasta rolando feed de redes sociais,
+                                            assistindo séries, você pode dedicar aos estudos, são apenas 40 minutos diários que vão te
+                                            trazer muitos benefícios em todos os campos da sua vida, eu posso te dar essa visão, mas
+                                            só você é responsável pela decisão de mudar sua vida ou não.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Card IV -->
+                                <div id="botão_Objeções_III" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Cartão</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuVIII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Tenho a opção do cartão pré pago, ele é semelhante
+                                            a um celular pré pago, é um cartão virtual na função crédito, sem taxa de adesão, analise de
+                                            crédito, ou anuidade, alguns bancos como nubank, mercadopago, pagseguro, oferecem um
+                                            cartão que você carrega somente o valor que vai usar ( no caso parcela do curso) e você
+                                            pode parcelar suas compras.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_Objeções_IV" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Cancelamento</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIX"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                             Fulano mas você não começou o curso e já esta pensando em cancelar?
+                                            Acredito que seu foco está no lugar errado, pois você precisa focar em se desenvolver e
+                                            aproveitar a plataforma.
+                                            Você tem 7 dias para cancelar após o inicio da compra, caso não goste e faremos o estorno
+                                            integral para você, sem cobrança de multa ou taxa.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_Objeções_V" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Pensar</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuX"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                             Fulano, você me disse hoje, que não havia nada que te impedia de
+                                            iniciar o curso caso gostasse, você disse que se encaixou no que busca, que você gostou
+                                            do método, coube no seu orçamento. Então no que mais você precisa pensar? Muitas vezes
+                                            o medo de tomar decisões que mudam nossa vida, nos faz protelar e só nos damos conta
+                                            depois de perder inúmeras oportunidades.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+
+                            </div>
+                        </div>
+                        <!-- Fim textos Abordagem -->
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Botões inferiores -->
+    <div class="position-fixed fixed-bottom text-center mb-5 ml-5">
+
+        <!-- Botão "Invisivel" -->
+        <div class="col-xl-2 col-md-6 mb-5 d-inline-block">
+        </div>
+
+
+    <!-- Botão "Desligou" -->
+        <div class="col-xl-2 col-md-2 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:gps' %}" class="card-link">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Desligou</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-phone-slash fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- LINK SHURI -->
+        <div class="col-xl-3 col-md-3 mb-5 d-inline-block">
+          <a href="https://shuricrm.wisereducacao.com/link" class="card-link" target="_blank">
+            <div class="card border-left-success shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xxl font-weight-bold text-success text-uppercase mb-1">Meu link</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-link fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- Live -->
+        <div class="col-xl-3 col-md-6 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:live' %}" class="card-link">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xxl font-weight-bold text-primary text-uppercase mb-1">Live</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-arrow-right fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+    </div>
+    <!-- Final botões inferiores -->
+
+
+        <!-- Final html -->
+</body>
+
+<!-- Adicione este script modificado -->
+<script>
+  // Variáveis
+  const durations = [60, 0]; // Durações em segundos para cada barra de progresso
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const cards = document.querySelectorAll('.card-link');
+
+  let cardIndex = 0;
+  let elapsedSeconds = 0;
+  let interval;
+
+  // Função para atualizar a barra de progresso
+  function updateProgressBar() {
+    elapsedSeconds++;
+    const progressPercentage = (elapsedSeconds / durations[cardIndex]) * 100;
+    progressBars[cardIndex].style.width = progressPercentage + '%';
+    if (elapsedSeconds >= durations[cardIndex]) {
+      clearInterval(interval);
+      cardIndex++; // Avance para o próximo card
+      if (cardIndex < cards.length) {
+        startCountdown(); // Inicie o contador para o próximo card
+      }
+    }
+  }
+
+
+
+  // Função para iniciar o contador
+  function startCountdown() {
+    elapsedSeconds = 0;
+    progressBars[cardIndex].style.width = '0%';
+    interval = setInterval(updateProgressBar, 1000);
+  }
+
+
+  // Adicionar um evento de clique para cada card
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      if (cardIndex === index) {
+        // Se o card clicado for o mesmo em andamento
+        clearInterval(interval); // Limpa o intervalo atual
+        elapsedSeconds = durations[cardIndex]; // Define o tempo decorrido como a duração para preencher a barra
+        updateProgressBar(); // Atualiza a barra de progresso
+      }
+    });
+  });
+
+
+
+  // Iniciar o contador quando a página carregar (inicie com o primeiro card)
+  startCountdown();
+
+
+
+    // Recolher os textos não clicados
+      document.querySelectorAll('.btn[data-toggle="collapse"]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const target = document.querySelector(btn.getAttribute('data-target'));
+            const allCollapses = document.querySelectorAll('.collapse');
+            allCollapses.forEach(function (collapse) {
+                if (collapse !== target) {
+                    $(collapse).collapse('hide');
+                }
+            });
+        });
+    });
+
+
+
+    function mostrarDiv() {
+        var div = document.getElementById('botoes_objecoes');
+        if (div.style.display === 'none' || div.style.display === '') {
+                div.style.display = 'block';
+            } else {
+                div.style.display = 'none';
+            }
+        }
+
+
+
+
+
+
+
+</script>
+
+
+
+<!-- Fim HTML -->
+
+{% endblock content %}

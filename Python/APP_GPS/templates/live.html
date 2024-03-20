@@ -1,0 +1,421 @@
+{% extends 'base_admin.html' %}
+{% block title %} WSR {% endblock title %}
+{% load static %}
+{% block content %}
+
+<!-- Inicio HTML -->
+<body>
+<p>Nome: {{lead_atendeu_fechamento.name}} / Telefone: {{lead_atendeu_fechamento.telefone}} </p>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-xl-6 col-md-6">
+                    <!-- Contadores -->
+                    <div class="row">
+                        <!-- SPEECH -->
+                        <div class="col-xl-12 col-md-12">
+                            <a href="#" class="card-link">
+                                <div class="card border-left-info shadow h-100 py-2">
+                                    <div class="card-body">
+                                        <div class="row no-gutters align-items-center">
+                                            <div class="col mr-2">
+                                                <div class="text-xxl font-weight-bold text-info text-uppercase mb-1">LIVE
+                                                </div>
+                                                <div class="row no-gutters align-items-center">
+                                                    <div class="col">
+                                                        <div class="progress progress-sm mr-2">
+                                                            <div class="progress-bar bg-info" role="progressbar"
+                                                                style="width: 0%" aria-valuenow="0" aria-valuemin="0"
+                                                                aria-valuemax="100"></div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-auto">
+                                                <i class="fas fa-hourglass-half fa-2x text-black-300"></i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Botões -->
+                    <div class="row justify-content-between">
+                        <!-- Botões Abordagem -->
+                        <div class="card-text accordion text-Left mt-2 ml-2" id="accordion_apresentacao">
+
+                            <!-- Caixa de seleção personalizada -->
+                            <div class="custom-control custom-checkbox my-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheck">
+                                <label class="custom-control-label" for="customCheck">
+                                    <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_I">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Chamada Live</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Caixa de seleção personalizada -->
+                            <div class="custom-control custom-checkbox my-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheckI">
+                                <label class="custom-control-label" for="customCheckI">
+                                    <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_II">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Apresentação Live</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Caixa de seleção personalizada -->
+                            <div class="custom-control custom-checkbox my-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheckII">
+                                <label class="custom-control-label" for="customCheckII">
+                                    <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_III">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Material didático</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Caixa de seleção personalizada -->
+                            <div class="custom-control custom-checkbox my-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheckIII">
+                                <label class="custom-control-label" for="customCheckIII">
+                                    <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_IV">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Opções de aula</span>
+                                    </div>
+                                </label>
+                            </div>
+                            <!-- Caixa de seleção personalizada -->
+                            <div class="custom-control custom-checkbox my-2">
+                                <input type="checkbox" class="custom-control-input" id="customCheckIV">
+                                <label class="custom-control-label" for="customCheckIV">
+                                    <div class="btn btn-success btn-icon-split" data-toggle="collapse" data-target="#botão_V">
+                                        <span class="icon text-white-50">
+                                            <i class="fas fa-check"></i>
+                                        </span>
+                                        <span class="text">Preços</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                        </div>
+                        <!-- Fim Botões Abordagem -->
+                    </div>
+            </div>
+
+            <div class="col-xl-6 col-md-6">
+                    <!-- Textos ocultos -->
+                    <div class="row">
+                        <!-- textos Abordagem -->
+                        <div class="row col-xl-12 col-md-12 mt-2 mr-auto">
+                            <div class="card shadow text-left">
+
+                                <!-- Card I -->
+                                <div id="botão_I" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Oferta Live</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuI"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Não sai dessa tela ainda que quero falar mais um assunto com você.
+                                            Em primeiro lugar parabéns, você já é um aluno da Wise Up, a plataforma digital
+                                            já está 100% liberada para começar a estudar.
+                                            O tema que vou falar com você agora é uma versão PREMIUM do Wise Up online,
+                                            para quem é essa versão, para aquela pessoa que quer uma aula personalizada
+                                            como se fosse um personal trainer, para quem quer socializar mais , pois nessa versão,
+                                            aleém de acesso aos professores, você terá acesso a colegas do mundo inteiro.
+                                            Isso te interessa?
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card II -->
+                                <div id="botão_II" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Personal trainer</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Nosso produto foi desenvolvido com objetivo de melhorar a sua performance na língua inglesa,
+                                            entendemos que cada pessoa tem um perfil muito especifico de aprendizado, e que para melhorar
+                                            tanto a conversação quanto o desempenho individual, precisam de um direcionamento.
+                                            A Wise Up Live, é uma plataforma de aulas ao vivo, com uma metodologia voltada para conversação
+                                            do dia a dia.
+                                            Sua formação vai do básico ao avançado em até 24 meses, contando com testes a cada 4 meses para
+                                            mudança de nível e analisando seu desenvolvimento.
+                                            Cada turma terá 11 alunos no máximo, para que você possa ter acesso a pessoas, culturas e realidades
+                                            diferentes, e assim aprenda a se comunicar em qualquer situação.
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Card III -->
+                                <div id="botão_III" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Material</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIII"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            Sua base de estudo para essas aulas, será os conteúdos da Wise Up online, com uma diferença,
+                                            hoje você acessa os conteúdos conforme a sua vontade, no Live, você vai concluir as tarefas
+                                            com um cronograma de ensino dado pelo seu professor, porque as suas aulas da semana, serão
+                                            com base no conteúdo estudo, é importantíssimo que prepare a aula, para não se sentir perdido.
+                                            As aulas acontecem 2x por semana, cada aula de 50 min, serão feitas pelo zoom, que você terá
+                                            acesso na sua plataforma. Você tem direito de assistir as aulas em outras turmas de diferentes
+                                            horários se precisar e ainda sim as aulas ficarão gravadas para que possa revisitar os conteúdos.
+                                            Antes de ingressar, você faz um teste de nivelamento, para ver qual melhor turma se enquadra com seu
+                                            nível para poder estar sempre evoluindo.
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card IV -->
+                                <div id="botão_IV" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Aulas</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuIV"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                        <p class="card-text">
+                                            <p>Opções de Aula 1 (Duas vezes na semana com 50 minutos de aula).</p>
+
+                                            <p>Segunda e Quarta feira das 7h da manhã as 23h</p>
+
+                                            <p>Terça e Quinta feira das 7h da manhã as 23h</p>
+
+                                            <p>Opções de Aula 2 (Uma vez na semana com 1:40h minutos de aula).</p>
+
+                                            <p>Sexta feira das 7h da manhã as 22h</p>
+
+                                            <p>Sábado das 9h da manhã as 16h</p>
+
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <!-- Card V -->
+                                <div id="botão_V" class="collapse">
+                                    <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                                        <h6 class="m-0 font-weight-bold text-primary">Preços</h6>
+                                        <div class="dropdown no-arrow">
+                                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuV"
+                                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fas fa-ellipsis-v fa-sm fa-fw text-gray-400"></i>
+                                            </a>
+                                            <div class="dropdown-menu dropdown-menu-right shadow animated--fade-in"
+                                                aria-labelledby="dropdownMenuLink">
+                                                <div class="dropdown-header">Opções:</div>
+                                                <a class="dropdown-item" href="#">Editar</a>
+                                                <a class="dropdown-item" href="#">Deletar</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="card card-body">
+                                            Individual
+                                            <p>Wise Up Online 12 x de R$ 156,00</p>
+                                            <p>R$250,00 (Matricula Live) </p>
+                                            <p>Mensalidade da aula ao vivo 24 x R$198,00 (Live)</p>
+                                            <p>Multiperfil (duas pessoas)</p>
+                                            <p>Wise Up Online 12 x de R$ 186,00</p>
+                                            <p>Matrícula $310,00</p>
+                                            <p>Mensalidade 24 x $258,00</p>
+                                    </div>
+                                </div>
+
+
+
+
+                            </div>
+                        </div>
+                        <!-- Fim textos Abordagem -->
+                    </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Botões inferiores -->
+    <div class="position-fixed fixed-bottom text-center mb-5">
+    <!-- Botão "Desligou" -->
+        <div class="col-xl-2 col-md-2 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:gps' %}" class="card-link">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-danger text-uppercase mb-1">Desligou</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-phone-slash fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+
+        <!-- DI -->
+        <div class="col-xl-3 col-md-6 mb-5 d-inline-block">
+          <a href="{% url 'APP_GPS:referidos' %}" class="card-link">
+            <div class="card border-left-primary shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xxl font-weight-bold text-primary text-uppercase mb-1">Referidos</div>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-arrow-right fa-2x"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </a>
+        </div>
+    </div>
+    <!-- Final botões inferiores -->
+
+
+        <!-- Final html -->
+</body>
+
+<!-- Adicione este script modificado -->
+<script>
+  // Variáveis
+  const durations = [60, 0]; // Durações em segundos para cada barra de progresso
+  const progressBars = document.querySelectorAll('.progress-bar');
+  const cards = document.querySelectorAll('.card-link');
+
+  let cardIndex = 0;
+  let elapsedSeconds = 0;
+  let interval;
+
+  // Função para atualizar a barra de progresso
+  function updateProgressBar() {
+    elapsedSeconds++;
+    const progressPercentage = (elapsedSeconds / durations[cardIndex]) * 100;
+    progressBars[cardIndex].style.width = progressPercentage + '%';
+    if (elapsedSeconds >= durations[cardIndex]) {
+      clearInterval(interval);
+      cardIndex++; // Avance para o próximo card
+      if (cardIndex < cards.length) {
+        startCountdown(); // Inicie o contador para o próximo card
+        // Mostra a div oculta do card atual e oculta as outras
+        cardTexts.forEach((text, index) => {
+          if (index === cardIndex) {
+            text.style.display = 'block';
+          } else {
+            text.style.display = 'none';
+          }
+        });
+      }
+    }
+  }
+
+
+
+  // Função para iniciar o contador
+  function startCountdown() {
+    elapsedSeconds = 0;
+    progressBars[cardIndex].style.width = '0%';
+    interval = setInterval(updateProgressBar, 1000);
+  }
+
+
+  // Adicionar um evento de clique para cada card
+  cards.forEach((card, index) => {
+    card.addEventListener('click', () => {
+      if (cardIndex === index) {
+        // Se o card clicado for o mesmo em andamento
+        clearInterval(interval); // Limpa o intervalo atual
+        elapsedSeconds = durations[cardIndex]; // Define o tempo decorrido como a duração para preencher a barra
+        updateProgressBar(); // Atualiza a barra de progresso
+      }
+    });
+  });
+
+
+
+  // Iniciar o contador quando a página carregar (inicie com o primeiro card)
+  startCountdown();
+
+
+
+    // Recolher os botões não clicados
+      document.querySelectorAll('.btn[data-toggle="collapse"]').forEach(function (btn) {
+        btn.addEventListener('click', function () {
+            const target = document.querySelector(btn.getAttribute('data-target'));
+            const allCollapses = document.querySelectorAll('.collapse');
+            allCollapses.forEach(function (collapse) {
+                if (collapse !== target) {
+                    $(collapse).collapse('hide');
+                }
+            });
+        });
+    });
+
+
+</script>
+
+
+
+<!-- Fim HTML -->
+
+{% endblock content %}
